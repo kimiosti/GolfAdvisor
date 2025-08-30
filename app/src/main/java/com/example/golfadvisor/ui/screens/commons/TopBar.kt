@@ -28,6 +28,8 @@ fun TopBar(navController: NavHostController, modifier: Modifier = Modifier) {
     val title = when {
         backStackEntry?.destination?.hasRoute<GolfAdvisorRoute.LoginScreen>() == true
             -> stringResource(R.string.login_screen_title)
+        backStackEntry?.destination?.hasRoute<GolfAdvisorRoute.RegisterScreen>() == true
+            -> stringResource(R.string.register_screen_title)
         backStackEntry?.destination?.hasRoute<GolfAdvisorRoute.CourseDetailScreen>() == true
             -> stringResource(R.string.course_detail_screen_title)
         backStackEntry?.destination?.hasRoute<GolfAdvisorRoute.AddReviewScreen>() == true
@@ -49,6 +51,9 @@ fun TopBar(navController: NavHostController, modifier: Modifier = Modifier) {
             && backStackEntry?.destination?.hasRoute<GolfAdvisorRoute.LoginScreen>() != true
             && backStackEntry?.destination?.hasRoute<GolfAdvisorRoute.HomeScreen>() != true
 
+    val showProfileIcon = backStackEntry?.destination?.hasRoute<GolfAdvisorRoute.LoginScreen>() != true
+            && backStackEntry?.destination?.hasRoute<GolfAdvisorRoute.RegisterScreen>() != true
+
     CenterAlignedTopAppBar(
         title = { Text(title) },
         navigationIcon = {
@@ -59,8 +64,14 @@ fun TopBar(navController: NavHostController, modifier: Modifier = Modifier) {
             }
         },
         actions = {
-            IconButton(onClick = { navController.navigate(GolfAdvisorRoute.YourProfileScreen) }) {
-                Icon(Icons.Outlined.Person, stringResource(R.string.your_profile_alt))
+            if (showProfileIcon) {
+                IconButton(onClick = {
+                    navController.navigate(GolfAdvisorRoute.YourProfileScreen)
+
+                    /* TODO - complete implementation checking login: if not logged, redirect to login screen */
+                }) {
+                    Icon(Icons.Outlined.Person, stringResource(R.string.your_profile_alt))
+                }
             }
             IconButton(onClick = { navController.navigate(GolfAdvisorRoute.SettingsScreen) }) {
                 Icon(Icons.Outlined.Settings, stringResource(R.string.settings_alt))
