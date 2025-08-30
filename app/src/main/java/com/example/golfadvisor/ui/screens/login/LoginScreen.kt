@@ -64,7 +64,12 @@ fun LoginScreen(navController: NavHostController, modifier: Modifier = Modifier)
                 ),
                 onClick = {
                     /* TODO - implement login logic */
-                    navController.navigate(GolfAdvisorRoute.HomeScreen)
+                    navController.navigate(GolfAdvisorRoute.HomeScreen) {
+                        navController.popBackStack(
+                            route = GolfAdvisorRoute.LoginScreen,
+                            inclusive = true
+                        )
+                    }
                 }
             ) {
                 Text(stringResource(R.string.login_button_content))
@@ -77,7 +82,12 @@ fun LoginScreen(navController: NavHostController, modifier: Modifier = Modifier)
         ) {
             Row(
                 modifier = Modifier.clickable {
-                    navController.navigate(GolfAdvisorRoute.RegisterScreen)
+                    navController.navigate(GolfAdvisorRoute.RegisterScreen) {
+                        navController.popBackStack(
+                            route = GolfAdvisorRoute.LoginScreen,
+                            inclusive = true
+                        )
+                    }
                 }
             ) {
                 Text(
@@ -96,7 +106,14 @@ fun LoginScreen(navController: NavHostController, modifier: Modifier = Modifier)
                 fontSize = MaterialTheme.typography.bodySmall.fontSize
             )
             Text(
-                modifier = Modifier.clickable { navController.navigate(GolfAdvisorRoute.HomeScreen) },
+                modifier = Modifier.clickable {
+                    navController.navigate(GolfAdvisorRoute.HomeScreen) {
+                        navController.popBackStack(
+                            route = GolfAdvisorRoute.LoginScreen,
+                            inclusive = true
+                        )
+                    }
+                },
                 text = stringResource(R.string.login_continue_as_guest),
                 fontSize = MaterialTheme.typography.bodySmall.fontSize
             )
