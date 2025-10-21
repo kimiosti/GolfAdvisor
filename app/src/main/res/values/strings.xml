@@ -1,0 +1,234 @@
+<resources>
+    <string name="app_name">GolfAdvisor</string>
+
+    <!-- Screen titles -->
+    <string name="login_screen_title">Login</string>
+    <string name="registration_screen_title">Register</string>
+    <string name="home_screen_title">GolfAdvisor</string>
+    <string name="search_club_screen_title">Search Clubs</string>
+    <string name="club_detail_screen_title">Club Detail</string>
+    <string name="club_reviews_screen_title">Club Reviews</string>
+    <string name="review_detail_screen_title">Review</string>
+    <string name="user_profile_screen_title">Profile</string>
+    <string name="user_favorites_screen_title">User Favorites</string>
+    <string name="user_scoring_trend_screen_title">User Scoring Trend</string>
+    <string name="user_reviews_screen_title">User Reviews</string>
+    <string name="add_review_screen_title">Add Review</string>
+    <string name="settings_screen_title">Settings</string>
+
+    <!-- Top bar icon descriptions -->
+    <string name="go_back_arrow_description">Go back</string>
+    <string name="your_profile_icon_description">Your Profile</string>
+    <string name="login_icon_description">Login</string>
+    <string name="settings_icon_description">Theme settings</string>
+
+    <!-- FAB icon descriptions -->
+    <string name="fab_search_icon_description">Find a course</string>,
+    <string name="fab_add_favorite_icon_description">Add to favorites</string>
+    <string name="fab_remove_favorite_icon_description">Remove from favorites</string>
+    <string name="fab_add_review_icon_description">Add review</string>
+
+    <!-- Themes screen names -->
+    <string name="light_theme_screen_name">Light</string>
+    <string name="dark_theme_screen_name">Dark</string>
+    <string name="system_theme_screen_name">System</string>
+
+    <!-- Access types screen names -->
+    <string name="half_round_access_type_screen_name">9 holes</string>
+    <string name="full_round_access_type_screen_name">18 holes</string>
+    <string name="driving_range_access_type_screen_name">Driving range</string>
+    <string name="restaurant_access_type_screen_name">Restaurant</string>
+
+    <!-- Badge names -->
+    <string name="novice_badge_name">Novice player</string>
+    <string name="amateur_badge_name">Amateur player</string>
+    <string name="average_badge_name">Average player</string>
+    <string name="top_badge_name">Top player</string>
+    <string name="scratch_badge_name">Scratch player</string>
+    <string name="tour_badge_name">Tour level player</string>
+    <string name="silent_badge_name">Silent</string>
+    <string name="reviewer_badge_name">Reviewer</string>
+    <string name="analyst_badge_name">Analyst</string>
+    <string name="reporter_badge_name">Reporter</string>
+    <string name="local_badge_name">Local player</string>
+    <string name="visitor_badge_name">Visitor</string>
+    <string name="traveler_badge_name">Traveler</string>
+    <string name="explorer_badge_name">Explorer</string>
+
+    <!-- Badge descriptions -->
+    <string name="novice_badge_description">A player who never played or shoots more than 100 strokes per round. We\'ve all been there!</string>
+    <string name="amateur_badge_description">A player who usually shoots between 90 and 100 strokes per round. They might not shine in competition, but the passion is there!</string>
+    <string name="average_badge_description">A player who usually shoots between 80 and 90 strokes per round. The average golfer… Don\'t lie on your resume!</string>
+    <string name="top_badge_description">A player who often shoots less than 80 strokes per round. A ready-for-competition player!</string>
+    <string name="scratch_badge_description">A player who can play level par at any course. Impressive!</string>
+    <string name="tour_badge_description">A player who is used to shooting well under par. They might consider a professional career as well!</string>
+    <string name="silent_badge_description">A player who rarely expresses his thoughts. They wrote less than 5 reviews.</string>
+    <string name="reviewer_badge_description">A player who knows when to speak. They wrote 5–10 reviews.</string>
+    <string name="analyst_badge_description">A player who has seen many courses and certainly knows what they\'re saying. They wrote 10–20 reviews.</string>
+    <string name="reporter_badge_description">A player who might as well be a professional course reviewer. They wrote more than 20 reviews.</string>
+    <string name="local_badge_description">A player who rarely tries out courses. They have less than 5 favorite clubs.</string>
+    <string name="visitor_badge_description">A player who is often seen playing around. They have 5–10 favorite clubs.</string>
+    <string name="traveler_badge_description">A player that loves trying out courses. They have 10–20 favorite clubs.</string>
+    <string name="explorer_badge_description">A player whose life goal is visiting all courses… Or spamming the like button! They have more than 20 favorite clubs.</string>
+
+    <!-- Login form -->
+    <string name="login_username_label">Username</string>
+    <string name="login_password_label">Password</string>
+    <string name="login_show_password">Show password</string>
+    <string name="login_hide_password">Hide password</string>
+    <string name="login_button_content">Login</string>
+    <string name="login_insert_credentials">Insert your credentials</string>
+    <string name="login_failed">Wrong username or password</string>
+    <string name="login_no_account_yet">You don\'t have an account?</string>
+    <string name="login_sign_up_now">Sign up now!</string>
+
+    <!-- Form items labels -->
+    <string name="registration_username_label">Username*</string>
+    <string name="registration_password_label">Password*</string>
+    <string name="registration_repeat_password_label">Repeat password*</string>
+    <string name="registration_name_label">Name</string>
+    <string name="registration_surname_label">Surname</string>
+    <string name="registration_show_password">Show password</string>
+    <string name="registration_hide_password">Hide password</string>
+    <string name="registration_button_content">Register</string>
+    <string name="registration_insert_credentials">Insert your profile information</string>
+    <string name="registration_username_taken">This username is already taken</string>
+    <string name="registration_password_mismatch">The two password must be equal</string>
+    <string name="registration_missing_fields">Insert all required fields</string>
+    <string name="registration_missing_username_description">Missing username</string>
+    <string name="registration_required_fields_info">*required fields</string>
+    <string name="registration_already_account">Already have an account?</string>
+    <string name="registration_login_now">Go to login!</string>
+
+    <!-- Home screen items -->
+    <string name="home_not_logged">It seems that you\'re not logged in.</string>
+    <string name="home_log_register_now">Log in now for a better experience!</string>
+    <string name="home_club_cover_description">Golf Club cover image</string>
+    <string name="home_full_star_description">Full rating star</string>
+    <string name="home_half_star_description">Half rating star</string>
+    <string name="home_empty_star_description">Empty rating star</string>
+    <string name="no_reviews_text">No reviews yet</string>
+
+    <!-- Search screen items -->
+    <string name="search_screen_bar_label">Course name</string>
+
+    <!-- Club detail screen -->
+    <string name="club_detail_cover_description">Golf Club cover image</string>
+    <string name="club_detail_invalid_name">The required golf club does not exist.</string>
+    <string name="club_detail_see_all_reviews_button_content">See all reviews</string>
+    <string name="club_detail_phone_icon_description">Call now</string>
+    <string name="club_detail_phone_intent_fail">No app found to call. Try again.</string>
+    <string name="club_detail_email_icon_description">Write an email</string>
+    <string name="club_detail_email_intent_fail">No app found to send email. Try again.</string>
+    <string name="club_detail_address_icon_description">See in map</string>
+    <string name="club_detail_address_intent_fail">No app found to open map. Try again.</string>
+    <string name="club_detail_add_review_button_content">Add a review</string>
+    <string name="club_detail_favorite_added">Golf club added to favorites</string>
+    <string name="club_detail_favorite_removed">Golf club removed from favorites</string>
+    <string name="club_detail_snackbar_undo_message">Undo</string>
+
+    <!-- Club reviews screen -->
+    <string name="club_reviews_invalid_data_icon_description">Invalid data</string>
+    <string name="club_reviews_invalid_data_error_message">The requested data cannot be fetched. Try again.</string>
+    <string name="club_reviews_club_image_description">Golf Club cover image</string>
+    <string name="club_reviews_back_to_info_button_content">Go back to club info</string>
+    <string name="club_reviews_no_reviews_text">No reviews yet.</string>
+
+    <!-- Review card items -->
+    <string name="review_card_profile_picture_description">Reviewer\'s profile picture</string>
+    <string name="review_card_club_cover_description">Golf Club cover image</string>
+
+    <!-- User profile screen -->
+    <string name="user_profile_error_icon_description">Invalid username</string>
+    <string name="user_profile_error_info_text">The requested profile cannot be loaded. Try again.</string>
+    <string name="user_profile_picture_description">User profile picture</string>
+    <string name="user_profile_scoring_average_label">Scoring average</string>
+    <string name="user_profile_scoring_badge_button">See scoring trend</string>
+    <string name="user_profile_reviews_badge_button">See reviews</string>
+    <string name="user_profile_favorites_badge_button">See favorites</string>
+    <string name="user_profile_logout_button_content">Sign out</string>
+    <string name="badge_image_description">Badge image</string>
+
+    <!-- User reviews screen -->
+    <string name="user_reviews_error_icon_description">Invalid username</string>
+    <string name="user_reviews_error_info_text">Data for the request profile cannot be loaded. Try again.</string>
+    <string name="user_reviews_no_reviews_text">The user has not added any review yet.</string>
+    <string name="your_reviews_no_reviews_text">You have not added any review yet.</string>
+    <string name="user_reviews_add_review_text">Find now the Club you want to review!</string>
+
+    <!-- User favorites screen -->
+    <string name="user_favorites_error_icon_description">Invalid username</string>
+    <string name="user_favorites_error_info_text">Data for the requested profile cannot be loaded. Try again.</string>
+    <string name="user_favorites_no_favorites_text">The user has no favorite Clubs yet.</string>
+    <string name="your_favorites_no_favorites_text">You have no favorite Clubs yet.</string>
+    <string name="user_favorites_find_favorites_text">Find now your ideal Club!</string>
+    <string name="user_favorites_removed_snackbar">Club removed from favorites</string>
+    <string name="user_favorites_removed_snackbar_undo">Undo</string>
+    <string name="user_favorites_club_cover_description">Club cover image</string>
+    <string name="user_favorites_remove_club_button_content">Remove favorite</string>
+
+    <!-- Add review screen -->
+    <string name="add_review_default_text">Add your review</string>
+    <string name="add_review_missing_fields_text">Insert all required fields</string>
+    <string name="add_review_missing_title_description">Missing title</string>
+    <string name="add_review_missing_text_description">Missing text</string>
+    <string name="add_review_missing_rating_description">Missing rating</string>
+    <string name="add_review_missing_access_type">Missing access type</string>
+    <string name="add_review_club_name_label">Club name*</string>
+    <string name="add_review_title_label">Title*</string>
+    <string name="add_review_text_label">Text*</string>
+    <string name="add_review_rating_label">Rating*</string>
+    <string name="add_review_access_type_label">Access type*</string>
+    <string name="add_review_rating_star_description">Rating star</string>
+    <string name="add_review_access_type_default_value">Choose an access type</string>
+    <string name="add_review_price_label">Price</string>
+    <string name="add_review_score_label">Score</string>
+    <string name="add_review_add_review_button">Add review</string>
+    <string name="add_review_access_type_placeholder">Access type</string>
+    <string name="add_review_required_fields_info">* required fields</string>
+
+    <!-- Review detail screen -->
+    <string name="review_detail_error_icon_description">Invalid review ID</string>
+    <string name="review_detail_error_message">The requested review cannot be loaded. Try again.</string>
+    <string name="review_detail_club_cover_image_description">Golf Club cover image</string>
+    <string name="review_detail_author_profile_pic_description">Author</string>
+    <string name="review_detail_access_type_label">Access type:</string>
+    <string name="review_detail_price_label">Price:</string>
+    <string name="review_detail_score_label">Score:</string>
+
+    <!-- Scoring trend screen -->
+    <string name="scoring_trend_error_icon_description">Invalid username</string>
+    <string name="scoring_trend_error_message">The scoring data for the requested username cannot be loaded. Try again.</string>
+    <string name="scoring_trend_profile_picture_description">User profile picture</string>
+    <string name="scoring_trend_no_scores_yet">No recorded scores yet.</string>
+
+    <!-- Settings screen -->
+    <string name="settings_screen_theme_section_title">Theme settings</string>
+    <string name="settings_screen_profile_section_title">Profile settings</string>
+    <string name="settings_screen_change_password">Change password</string>
+    <string name="settings_screen_change_user_data">Handle your profile data</string>
+    <string name="settings_screen_sign_out">Sign out</string>
+
+    <!-- Change user data screen -->
+    <string name="change_user_data_screen_info_text">Insert your name and surname</string>
+    <string name="change_user_data_name_label">Name</string>
+    <string name="change_user_data_surname_label">Surname</string>
+    <string name="change_user_data_confirm_button_text">Confirm</string>
+
+    <!-- Change password screen -->
+    <string name="change_password_screen_info_text">Insert the password and repeat twice the new one</string>
+    <string name="change_password_screen_login_failed">Wrong password</string>
+    <string name="change_password_screen_same_password">The new password must be different from the old one</string>
+    <string name="change_password_screen_password_not_matching">The two new passwords must be equal</string>
+    <string name="change_password_screen_no_new_password">The new password must not be empty</string>
+    <string name="change_password_screen_old_password_label">Old password</string>
+    <string name="change_password_screen_hide_old_password">Hide old password</string>
+    <string name="change_password_screen_show_old_password">Show old password</string>
+    <string name="change_password_screen_new_password_label">New password</string>
+    <string name="change_password_screen_hide_new_password">Hide new password</string>
+    <string name="change_password_screen_show_new_password">Show new password</string>
+    <string name="change_password_screen_repeat_new_password_label">Repeat new password</string>
+    <string name="change_password_screen_hide_repeated_new_password">Hide repeated new password</string>
+    <string name="change_password_screen_show_repeated_new_password">Show repeated new password</string>
+    <string name="change_password_screen_confirm_button_content">Confirm</string>
+</resources>
