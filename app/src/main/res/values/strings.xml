@@ -8,7 +8,7 @@
     <string name="search_club_screen_title">Search Clubs</string>
     <string name="club_detail_screen_title">Club Detail</string>
     <string name="club_reviews_screen_title">Club Reviews</string>
-    <string name="review_detail_screen_title">Review</string>
+    <string name="review_detail_screen_title">Review Detail</string>
     <string name="user_profile_screen_title">Profile</string>
     <string name="user_favorites_screen_title">User Favorites</string>
     <string name="user_scoring_trend_screen_title">User Scoring Trend</string>
@@ -20,10 +20,10 @@
     <string name="go_back_arrow_description">Go back</string>
     <string name="your_profile_icon_description">Your Profile</string>
     <string name="login_icon_description">Login</string>
-    <string name="settings_icon_description">Theme settings</string>
+    <string name="settings_icon_description">Settings</string>
 
     <!-- FAB icon descriptions -->
-    <string name="fab_search_icon_description">Find a course</string>,
+    <string name="fab_search_icon_description">Find a Club</string>,
     <string name="fab_add_favorite_icon_description">Add to favorites</string>
     <string name="fab_remove_favorite_icon_description">Remove from favorites</string>
     <string name="fab_add_review_icon_description">Add review</string>
@@ -66,10 +66,10 @@
     <string name="reviewer_badge_description">A player who knows when to speak. They wrote 5–10 reviews.</string>
     <string name="analyst_badge_description">A player who has seen many courses and certainly knows what they\'re saying. They wrote 10–20 reviews.</string>
     <string name="reporter_badge_description">A player who might as well be a professional course reviewer. They wrote more than 20 reviews.</string>
-    <string name="local_badge_description">A player who rarely tries out courses. They have less than 5 favorite clubs.</string>
-    <string name="visitor_badge_description">A player who is often seen playing around. They have 5–10 favorite clubs.</string>
-    <string name="traveler_badge_description">A player that loves trying out courses. They have 10–20 favorite clubs.</string>
-    <string name="explorer_badge_description">A player whose life goal is visiting all courses… Or spamming the like button! They have more than 20 favorite clubs.</string>
+    <string name="local_badge_description">A player who rarely tries out courses. They have less than 5 favorite Clubs.</string>
+    <string name="visitor_badge_description">A player who is often seen playing around. They have 5–10 favorite Clubs.</string>
+    <string name="traveler_badge_description">A player that loves trying out courses. They have 10–20 favorite Clubs.</string>
+    <string name="explorer_badge_description">A player whose life goal is visiting all courses… Or spamming the like button! They have more than 20 favorite Clubs.</string>
 
     <!-- Login form -->
     <string name="login_username_label">Username</string>
@@ -110,21 +110,21 @@
     <string name="no_reviews_text">No reviews yet</string>
 
     <!-- Search screen items -->
-    <string name="search_screen_bar_label">Course name</string>
+    <string name="search_screen_bar_label">Club name</string>
 
     <!-- Club detail screen -->
     <string name="club_detail_cover_description">Golf Club cover image</string>
-    <string name="club_detail_invalid_name">The required golf club does not exist.</string>
+    <string name="club_detail_invalid_name">The required Golf Club does not exist.</string>
     <string name="club_detail_see_all_reviews_button_content">See all reviews</string>
     <string name="club_detail_phone_icon_description">Call now</string>
     <string name="club_detail_phone_intent_fail">No app found to call. Try again.</string>
     <string name="club_detail_email_icon_description">Write an email</string>
     <string name="club_detail_email_intent_fail">No app found to send email. Try again.</string>
-    <string name="club_detail_address_icon_description">See in map</string>
+    <string name="club_detail_address_icon_description">Open in map</string>
     <string name="club_detail_address_intent_fail">No app found to open map. Try again.</string>
     <string name="club_detail_add_review_button_content">Add a review</string>
-    <string name="club_detail_favorite_added">Golf club added to favorites</string>
-    <string name="club_detail_favorite_removed">Golf club removed from favorites</string>
+    <string name="club_detail_favorite_added">Golf Club added to favorites</string>
+    <string name="club_detail_favorite_removed">Golf Club removed from favorites</string>
     <string name="club_detail_snackbar_undo_message">Undo</string>
 
     <!-- Club reviews screen -->
@@ -185,7 +185,7 @@
     <string name="add_review_score_label">Score</string>
     <string name="add_review_add_review_button">Add review</string>
     <string name="add_review_access_type_placeholder">Access type</string>
-    <string name="add_review_required_fields_info">* required fields</string>
+    <string name="add_review_required_fields_info">*required fields</string>
 
     <!-- Review detail screen -->
     <string name="review_detail_error_icon_description">Invalid review ID</string>
