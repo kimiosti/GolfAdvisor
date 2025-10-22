@@ -57,7 +57,9 @@ fun GolfAdvisorNavGraph(
         this.composable<GolfAdvisorRoute.LoginScreen> {
             LoginScreen(
                 navController = navController,
-                loginViewModel = loginViewModel
+                loginViewModel = loginViewModel,
+                snackbarHostState = snackbarHostState,
+                coroutineScope = coroutineScope
             )
         }
 
@@ -66,7 +68,9 @@ fun GolfAdvisorNavGraph(
             RegistrationScreen(
                 navController = navController,
                 loginViewModel = loginViewModel,
-                registrationViewModel = registrationViewModel
+                registrationViewModel = registrationViewModel,
+                snackbarHostState = snackbarHostState,
+                coroutineScope = coroutineScope
             )
         }
 
@@ -125,7 +129,9 @@ fun GolfAdvisorNavGraph(
                 navController = navController,
                 userProfileViewModel = userProfileViewModel,
                 loginViewModel = loginViewModel,
-                username = route.username
+                username = route.username,
+                snackbarHostState = snackbarHostState,
+                coroutineScope = coroutineScope
             )
         }
 
@@ -170,7 +176,9 @@ fun GolfAdvisorNavGraph(
                 addReviewViewModel = addReviewViewModel,
                 isLogged = loginViewModel.state.value.isLogged,
                 username = loginViewModel.state.value.username,
-                clubName = route.clubName
+                clubName = route.clubName,
+                snackbarHostState = snackbarHostState,
+                coroutineScope = coroutineScope
             )
         }
 
@@ -178,7 +186,9 @@ fun GolfAdvisorNavGraph(
             SettingsScreen(
                 navController = navController,
                 themeViewModel = themeViewModel,
-                loginViewModel = loginViewModel
+                loginViewModel = loginViewModel,
+                snackbarHostState = snackbarHostState,
+                coroutineScope = coroutineScope
             )
         }
 
@@ -187,7 +197,9 @@ fun GolfAdvisorNavGraph(
             ChangeUserDataScreen(
                 navController = navController,
                 loginViewModel = loginViewModel,
-                changeUserDataViewModel = changeUserDataViewModel
+                changeUserDataViewModel = changeUserDataViewModel,
+                snackbarHostState = snackbarHostState,
+                coroutineScope = coroutineScope
             )
         }
 
@@ -196,7 +208,9 @@ fun GolfAdvisorNavGraph(
             ChangePasswordScreen(
                 navController = navController,
                 loginViewModel = loginViewModel,
-                changePasswordViewModel = changePasswordViewModel
+                changePasswordViewModel = changePasswordViewModel,
+                snackbarHostState = snackbarHostState,
+                coroutineScope = coroutineScope
             )
         }
     }
