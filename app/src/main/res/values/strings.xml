@@ -81,8 +81,9 @@
     <string name="login_failed">Wrong username or password</string>
     <string name="login_no_account_yet">You don\'t have an account?</string>
     <string name="login_sign_up_now">Sign up now!</string>
+    <string name="login_successful_snackbar_message">Login successful</string>
 
-    <!-- Form items labels -->
+    <!-- Registration form -->
     <string name="registration_username_label">Username*</string>
     <string name="registration_password_label">Password*</string>
     <string name="registration_repeat_password_label">Repeat password*</string>
@@ -99,6 +100,7 @@
     <string name="registration_required_fields_info">*required fields</string>
     <string name="registration_already_account">Already have an account?</string>
     <string name="registration_login_now">Go to login!</string>
+    <string name="registration_successful_snackbar_message">Registration successful</string>
 
     <!-- Home screen items -->
     <string name="home_not_logged">It seems that you\'re not logged in.</string>
@@ -148,6 +150,7 @@
     <string name="user_profile_favorites_badge_button">See favorites</string>
     <string name="user_profile_logout_button_content">Sign out</string>
     <string name="badge_image_description">Badge image</string>
+    <string name="user_logged_out_snackbar_message">Logged out successfully</string>
 
     <!-- User reviews screen -->
     <string name="user_reviews_error_icon_description">Invalid username</string>
@@ -186,6 +189,7 @@
     <string name="add_review_add_review_button">Add review</string>
     <string name="add_review_access_type_placeholder">Access type</string>
     <string name="add_review_required_fields_info">*required fields</string>
+    <string name="add_review_successful_snackbar_message">Review added successfully</string>
 
     <!-- Review detail screen -->
     <string name="review_detail_error_icon_description">Invalid review ID</string>
@@ -214,6 +218,7 @@
     <string name="change_user_data_name_label">Name</string>
     <string name="change_user_data_surname_label">Surname</string>
     <string name="change_user_data_confirm_button_text">Confirm</string>
+    <string name="change_user_data_success_snackbar_message">User data changed successfully</string>
 
     <!-- Change password screen -->
     <string name="change_password_screen_info_text">Insert the password and repeat twice the new one</string>
@@ -231,4 +236,5 @@
     <string name="change_password_screen_hide_repeated_new_password">Hide repeated new password</string>
     <string name="change_password_screen_show_repeated_new_password">Show repeated new password</string>
     <string name="change_password_screen_confirm_button_content">Confirm</string>
+    <string name="change_password_success_snackbar_message">Password changed successfully</string>
 </resources>
