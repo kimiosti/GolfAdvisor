@@ -14,6 +14,8 @@ import androidx.compose.material.icons.filled.Error
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -31,6 +33,8 @@ import com.example.golfadvisor.ui.navigation.GolfAdvisorRoute
 import com.example.golfadvisor.ui.screens.commons.LoginViewModel
 import com.example.golfadvisor.ui.screens.commons.composables.SingleBadgeCard
 import com.example.golfadvisor.ui.screens.commons.composables.UserInfoContainer
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 @Composable
 fun UserProfileScreen(
@@ -38,11 +42,15 @@ fun UserProfileScreen(
     userProfileViewModel: UserProfileViewModel,
     loginViewModel: LoginViewModel,
     username: String,
+    snackbarHostState: SnackbarHostState,
+    coroutineScope: CoroutineScope,
     modifier: Modifier = Modifier
 ) {
     val loginState by loginViewModel.state.collectAsStateWithLifecycle()
     val userProfileState by userProfileViewModel.state.collectAsStateWithLifecycle()
     val scrollState = rememberScrollState()
+
+    val userLoggedOutMessage = stringResource(R.string.user_logged_out_snackbar_message)
 
     LaunchedEffect(Unit) { userProfileViewModel.actions.checkProfileInfo(username) }
 
@@ -104,6 +112,13 @@ fun UserProfileScreen(
                 Spacer(modifier = Modifier.height(24.dp))
                 Button(onClick = {
                     loginViewModel.actions.logout()
+                    coroutineScope.launch {
+                        snackbarHostState.showSnackbar(
+                            message = userLoggedOutMessage,
+                            withDismissAction = true,
+                            duration = SnackbarDuration.Short
+                        )
+                    }
                     navController.navigate(GolfAdvisorRoute.HomeScreen) {
                         popUpTo(navController.graph.findStartDestination().id) {
                             inclusive = true

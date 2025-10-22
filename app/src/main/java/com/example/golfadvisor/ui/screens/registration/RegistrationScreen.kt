@@ -21,6 +21,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -42,12 +44,16 @@ import androidx.navigation.NavHostController
 import com.example.golfadvisor.R
 import com.example.golfadvisor.ui.navigation.GolfAdvisorRoute
 import com.example.golfadvisor.ui.screens.commons.LoginViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 @Composable
 fun RegistrationScreen(
     navController: NavHostController,
     loginViewModel: LoginViewModel,
     registrationViewModel: RegistrationViewModel,
+    snackbarHostState: SnackbarHostState,
+    coroutineScope: CoroutineScope,
     modifier: Modifier = Modifier
 ) {
     val registrationState by registrationViewModel.state.collectAsStateWithLifecycle()
@@ -67,9 +73,18 @@ fun RegistrationScreen(
     var missingPassword by rememberSaveable { mutableStateOf(false) }
     var missingRepeatPassword by rememberSaveable { mutableStateOf(false) }
 
+    val registrationSuccessMessage = stringResource(R.string.registration_successful_snackbar_message)
+
     LaunchedEffect(registrationState) {
         if (registrationState.isRegistrationOk == true) {
             loginViewModel.actions.login(username)
+            coroutineScope.launch {
+                snackbarHostState.showSnackbar(
+                    message = registrationSuccessMessage,
+                    withDismissAction = true,
+                    duration = SnackbarDuration.Short
+                )
+            }
         } else {
             invalidUsername = !registrationState.isUsernameValid
         }

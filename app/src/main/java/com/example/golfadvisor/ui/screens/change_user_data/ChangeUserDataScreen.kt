@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -25,12 +27,16 @@ import androidx.navigation.NavHostController
 import com.example.golfadvisor.R
 import com.example.golfadvisor.ui.navigation.GolfAdvisorRoute
 import com.example.golfadvisor.ui.screens.commons.LoginViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 @Composable
 fun ChangeUserDataScreen(
     navController: NavHostController,
     loginViewModel: LoginViewModel,
     changeUserDataViewModel: ChangeUserDataViewModel,
+    snackbarHostState: SnackbarHostState,
+    coroutineScope: CoroutineScope,
     modifier: Modifier = Modifier
 ) {
     val loginState by loginViewModel.state.collectAsStateWithLifecycle()
@@ -38,6 +44,8 @@ fun ChangeUserDataScreen(
 
     var name by rememberSaveable { mutableStateOf("") }
     var surname by rememberSaveable { mutableStateOf("") }
+
+    val userDataChangedMessage = stringResource(R.string.change_user_data_success_snackbar_message)
 
     LaunchedEffect(Unit) {
         changeUserDataViewModel.actions.loadUserData(loginState.username)
@@ -98,6 +106,13 @@ fun ChangeUserDataScreen(
                         name,
                         surname
                     )
+                    coroutineScope.launch {
+                        snackbarHostState.showSnackbar(
+                            message = userDataChangedMessage,
+                            withDismissAction = true,
+                            duration = SnackbarDuration.Short
+                        )
+                    }
                     navController.navigateUp()
                 }
             ) {

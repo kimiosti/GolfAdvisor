@@ -24,6 +24,8 @@ import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -42,6 +44,8 @@ import androidx.navigation.NavHostController
 import com.example.golfadvisor.R
 import com.example.golfadvisor.data.enums.AccessType
 import com.example.golfadvisor.ui.navigation.GolfAdvisorRoute
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -51,6 +55,8 @@ fun AddReviewScreen(
     isLogged: Boolean,
     username: String,
     clubName: String,
+    snackbarHostState: SnackbarHostState,
+    coroutineScope: CoroutineScope,
     modifier: Modifier = Modifier
 ) {
     val scrollState = rememberScrollState()
@@ -69,6 +75,8 @@ fun AddReviewScreen(
     var missingText by rememberSaveable { mutableStateOf(false) }
     var missingRating by rememberSaveable { mutableStateOf(false) }
     var missingAccessType by rememberSaveable { mutableStateOf(false) }
+
+    val reviewAddedMessage = stringResource(R.string.add_review_successful_snackbar_message)
 
     LaunchedEffect(isLogged) {
         if (!isLogged) {
@@ -275,6 +283,13 @@ fun AddReviewScreen(
                             price = price,
                             score = score
                         )
+                        coroutineScope.launch {
+                            snackbarHostState.showSnackbar(
+                                message = reviewAddedMessage,
+                                withDismissAction = true,
+                                duration = SnackbarDuration.Short
+                            )
+                        }
                         navController.navigateUp()
                     }
                 }

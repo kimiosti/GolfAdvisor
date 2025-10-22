@@ -20,6 +20,8 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -38,15 +40,21 @@ import com.example.golfadvisor.data.enums.Theme
 import com.example.golfadvisor.ui.navigation.GolfAdvisorRoute
 import com.example.golfadvisor.ui.screens.commons.LoginViewModel
 import com.example.golfadvisor.ui.screens.commons.ThemeViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 @Composable
 fun SettingsScreen(
     navController: NavHostController,
     themeViewModel: ThemeViewModel,
     loginViewModel: LoginViewModel,
+    snackbarHostState: SnackbarHostState,
+    coroutineScope: CoroutineScope,
     modifier: Modifier = Modifier
 ) {
     val loginState by loginViewModel.state.collectAsStateWithLifecycle()
+
+    val userLoggedOutMessage = stringResource(R.string.user_logged_out_snackbar_message)
 
     Column(
         modifier = modifier.fillMaxWidth().padding(horizontal = 16.dp).padding(top = 24.dp)
@@ -127,6 +135,13 @@ fun SettingsScreen(
                     text = stringResource(R.string.settings_screen_sign_out)
                 ) {
                     loginViewModel.actions.logout()
+                    coroutineScope.launch {
+                        snackbarHostState.showSnackbar(
+                            message = userLoggedOutMessage,
+                            withDismissAction = true,
+                            duration = SnackbarDuration.Short
+                        )
+                    }
                     navController.navigate(GolfAdvisorRoute.HomeScreen) {
                         popUpTo(navController.graph.findStartDestination().id) {
                             inclusive = true

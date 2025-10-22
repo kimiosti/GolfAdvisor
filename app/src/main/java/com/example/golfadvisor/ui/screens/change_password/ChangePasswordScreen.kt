@@ -14,6 +14,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -35,12 +37,16 @@ import androidx.navigation.NavHostController
 import com.example.golfadvisor.R
 import com.example.golfadvisor.ui.navigation.GolfAdvisorRoute
 import com.example.golfadvisor.ui.screens.commons.LoginViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 @Composable
 fun ChangePasswordScreen(
     navController: NavHostController,
     loginViewModel: LoginViewModel,
     changePasswordViewModel: ChangePasswordViewModel,
+    snackbarHostState: SnackbarHostState,
+    coroutineScope: CoroutineScope,
     modifier: Modifier = Modifier
 ) {
     val loginState by loginViewModel.state.collectAsStateWithLifecycle()
@@ -59,6 +65,8 @@ fun ChangePasswordScreen(
     var isNewPasswordVisible by rememberSaveable { mutableStateOf(false) }
     var isRepeatNewPasswordVisible by rememberSaveable { mutableStateOf(false) }
 
+    val passwordChangedMessage = stringResource(R.string.change_password_success_snackbar_message)
+
     LaunchedEffect(loginState) {
         if (!loginState.isLogged) {
             navController.navigate(GolfAdvisorRoute.LoginScreen) {
@@ -71,6 +79,13 @@ fun ChangePasswordScreen(
 
     LaunchedEffect(changePasswordState) {
         if (changePasswordState.passwordChanged) {
+            coroutineScope.launch {
+                snackbarHostState.showSnackbar(
+                    message = passwordChangedMessage,
+                    withDismissAction = true,
+                    duration = SnackbarDuration.Short
+                )
+            }
             navController.navigateUp()
         } else {
             isOldPasswordInvalid = changePasswordState.loginFailed
